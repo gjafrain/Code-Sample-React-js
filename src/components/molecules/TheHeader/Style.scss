@@ -1,0 +1,247 @@
+@use "sass:map";
+@import "../../../styles/colors.scss";
+
+.header-container {
+    height: inherit;
+    min-height: unset !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px !important;
+    background-color: map.get($theme-colors, "PRIMARY");
+    position: sticky;
+    width: 100%;
+    top: 0;
+    margin: 0 auto;
+    padding: 0 10px;
+    z-index: 999;
+    padding: 0 40px;
+    border-radius: 0;
+
+    .container {
+        min-height: inherit;
+        display: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+        margin: inherit;
+        height: inherit;
+        box-shadow: unset;
+    }
+
+    .title {
+        font-size: 1em;
+        color: WHITE;
+        text-transform: uppercase;
+        padding-left: 10px;
+        cursor: pointer;
+        transition: all 0.2s linear;
+    }
+
+    .title:hover {
+        transform: scale(1.03);
+    }
+
+    .brand-name-logo {
+        width: 230px;
+        transition: all 0.2s linear;
+        // transform: scale(0.9);
+        cursor: pointer;
+        img {
+            cursor: pointer;
+            width: 100%;
+        }
+    }
+
+    .brand-name-logo:hover {
+        transform: scale(0.9);
+    }
+}
+.header-left-icon {
+    background: #d6d7d669;
+    cursor: pointer;
+    border-radius: 5px;
+    .tintColor {
+        filter: brightness(0) invert(1) !important;
+    }
+}
+.account-menu {
+    color: map.get($theme-colors, "WHITE");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    .account-menu-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-right: 1em;
+    }
+    .main-text {
+        font-size: 1em;
+        line-height: 1em;
+    }
+    .sub-text {
+        font-size: 0.8em;
+        line-height: 0.8em;
+        padding-top: 5px;
+    }
+}
+.my-account-menu-container {
+    min-width: 300px;
+    padding-top: 1em;
+    .ui.label {
+        font-size: unset !important;
+        .title {
+            color: map.get($theme-colors, "WHITE");
+            font-size: 1.5em;
+        }
+    }
+    .login-signup {
+        margin: 2rem 1.5em 1.5rem;
+        padding: 1em;
+        font-size: 1.5em;
+        // background-color: map.get($theme-colors, "PRIMARY");
+        color: map.get($theme-colors, "PRIMARY");
+        border: 1px solid map.get($theme-colors, "PRIMARY");
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        height: 50px;
+    }
+
+    .faq-menu {
+        padding: 1em 2.2rem;
+        font-size: 1.5em;
+        // background-color: map.get($theme-colors, "PRIMARY");
+        color: map.get($theme-colors, "BLACK_LIGHT");
+        border-top: 1px solid map.get($theme-colors, "GRAY_MEDIUM");
+        // border-radius: 5px;
+        // text-align: center;
+        cursor: pointer;
+        height: 50px;
+    }
+    .menu-options {
+        margin-top: 1.5em;
+        .language-options {
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 16px;
+            .label {
+                padding-left: 3px;
+                transition: 0.3s all;
+            }
+            .radio-wrapper:hover {
+                .label {
+                    padding-right: 3px;
+                    padding-left: 0px;
+                }
+            }
+        }
+
+        .menu-option {
+            padding: 1em 2.2rem;
+            font-size: 1.4em;
+            color: map.get($theme-colors, "BLACK_LIGHT");
+            border-bottom: 1px solid map.get($theme-colors, "GRAY_MEDIUM");
+            cursor: pointer;
+            height: 50px;
+        }
+        .logout-menu {
+            padding: 1em 2.2rem;
+            font-size: 1.4em;
+            color: map.get($theme-colors, "BLACK_LIGHT");
+            border-bottom: none;
+            cursor: pointer;
+            height: 50px;
+        }
+        .faq-menu {
+            font-size: 1.4em;
+            color: map.get($theme-colors, "BLACK_LIGHT");
+            border-top: none;
+            border-bottom: 1px solid map.get($theme-colors, "GRAY_MEDIUM");
+        }
+        .customIcon {
+            font-size: 1.4em;
+            margin-right: 10px;
+            display: flex;
+        }
+        i.icon {
+            height: unset !important;
+            width: unset !important;
+        }
+    }
+}
+
+.cart-menu {
+    margin-left: 2em;
+    padding-left: 0.5em;
+    background: #d6d7d669;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    color: map.get($theme-colors, "WHITE");
+    position: relative;
+    cursor: pointer;
+
+    .ui.floating.label {
+        font-size: 0.8em !important;
+        padding: 0px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.5em !important;
+        height: 1.5em !important;
+        min-width: 1.5em !important;
+        min-height: 1.5em !important;
+        overflow: hidden !important;
+        top: -0.5em !important;
+        right: -0.5em !important;
+    }
+}
+
+.ui.popup {
+    border-radius: 10px !important;
+}
+
+.ui.bottom.right.popup {
+    padding: 0 !important;
+}
+
+.search-container {
+}
+
+@media only screen and (max-width: 340px) {
+    .header-container {
+        padding: 0;
+        .container {
+            padding: 0.5em !important;
+        }
+        .brand-name-logo {
+            width: 110px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header-container {
+        padding: 0;
+        .container {
+            padding: 1em !important;
+        }
+        .brand-name-logo {
+            width: 130px;
+        }
+        .cart-menu {
+            padding-left: 0;
+            .view-cart-label {
+                display: none;
+            }
+        }
+    }
+    .my-account-menu-container {
+        min-width: 250px;
+    }
+}

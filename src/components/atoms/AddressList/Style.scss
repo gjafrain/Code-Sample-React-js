@@ -1,0 +1,116 @@
+@use "sass:map";
+@import "../../../styles/colors.scss";
+
+.address-wrapper {
+    padding: 10px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    width: fit-content;
+    width: 250px;
+    min-width: 250px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.8em;
+    .icon {
+        cursor: pointer;
+        transform: scale(0.8);
+        transition: 0.2s all;
+        font-size: 1.5em;
+    }
+    .icon:hover {
+        transform: scale(1);
+    }
+    .address-type-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 8px;
+        color: map.get($theme-colors, "THIRD");
+        .title {
+            color: map.get($theme-colors, "THIRD");
+        }
+        .icon {
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+    }
+    .phone-wrapper {
+        font-family: "OpenSans-Light";
+        font-size: 0.9em;
+        color: map.get($theme-colors, "BLACK_TEXT");
+    }
+    .address {
+        font-family: "OpenSans-Light";
+        font-size: 0.9em;
+        color: #424242;
+    }
+    .action-wrapper {
+        border-top: 1px solid #ebebeb;
+        padding-top: 0.5em;
+        display: flex;
+        justify-content: space-evenly;
+        .icon {
+            color: map.get($theme-colors, "GRAY_DARK");
+        }
+        .trash:hover {
+            color: map.get($theme-colors, "ALERT");
+        }
+        .edit:hover {
+            color: map.get($theme-colors, "WARNING");
+        }
+    }
+}
+
+.address-wrapper.add {
+    border: 1px solid map.get($theme-colors, "PRIMARY");
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .add-address {
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        height: 40px;
+        padding: 0 1em;
+        img {
+            filter: brightness(0%) invert(10%);
+        }
+    }
+}
+
+.custom-segment {
+    border-radius: 10px !important;
+    box-shadow: 8px 10px 26px 9px rgb(34 36 38 / 15%) !important;
+    .alert-wrapper {
+        font-size: 16px;
+        padding: 1.5em;
+        p {
+            font-family: "OpenSans-Light";
+            font-size: 0.9em;
+        }
+        .footer-wrapper {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 1em 0 0;
+
+            .submit-btn {
+                color: map.get($theme-colors, "BLACK_TEXT");
+                height: 45px;
+                border: 1px solid map.get($theme-colors, "GRAY_LIGHT");
+                padding: 0 1em;
+                border-radius: 5px;
+            }
+            .cancel-btn {
+                border-radius: 5px;
+                color: map.get($theme-colors, "GRAY_MEDIUM");
+                height: 45px;
+                border: 1px solid map.get($theme-colors, "GRAY_LIGHT");
+                padding: 0 1em;
+            }
+        }
+    }
+}

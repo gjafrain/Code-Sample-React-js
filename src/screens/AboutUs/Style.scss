@@ -1,0 +1,22 @@
+@use "sass:map";
+@import "../../styles/colors.scss";
+
+.about-container {
+    padding: 5em 7em;
+    .title {
+        font-size: 2em;
+        text-align: center;
+    }
+    .botton-line {
+        height: 2px;
+        width: 100px;
+        border-radius: 10px;
+        background-color: map.get($theme-colors, "PRIMARY");
+        margin: 0.4em auto 2em;
+    }
+    .description {
+        font-family: "OpenSans-Light";
+        letter-spacing: 0.05em;
+        line-height: 2em;
+    }
+}

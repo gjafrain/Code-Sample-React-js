@@ -1,0 +1,62 @@
+@use "sass:map";
+@import "../../../styles//colors.scss";
+
+.cart-wrapper {
+    padding: 10px;
+    font-size: 16px;
+    min-width: 320px;
+    .cart-header {
+        display: flex;
+        align-items: center;
+        padding: 1rem 0 1.5rem;
+        .ui.label {
+            font-size: unset !important;
+            .title {
+                color: map.get($theme-colors, "WHITE");
+                font-size: 0.9em;
+            }
+        }
+        .item-count {
+            font-size: 0.8em;
+            color: map.get($theme-colors, "GRAY_TEXT");
+            font-family: "OpenSans-Light";
+            margin-left: 0.8em;
+        }
+    }
+    .cart-list {
+        max-height: 50vh;
+        min-height: 30vh;
+        overflow: auto;
+    }
+
+    .cart-footer {
+        // height: 50px;
+        // background: #3a6b35;
+        // border-radius: 5px;
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+        // padding: 10px;
+        // color: map.get($theme-colors, "WHITE");
+        // cursor: pointer;
+
+        .checkout-btn {
+            margin: 2rem 1.5em 1.5rem;
+            padding: 1em;
+            font-size: 1em;
+            border: 1px solid map.get($theme-colors, "PRIMARY");
+            color: map.get($theme-colors, "BLACK_TEXT");
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            height: 50px;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cart-wrapper {
+        min-height: 300px;
+    }
+}

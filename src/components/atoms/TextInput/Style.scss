@@ -1,0 +1,69 @@
+@use "sass:map";
+@import "../../../styles/colors.scss";
+
+.custom-input {
+    position: relative;
+    margin: 0.5em;
+    label {
+        font-family: "OpenSans-Light";
+        position: absolute;
+        font-size: 0.9em;
+        top: 35px;
+        display: block;
+        -webkit-transition: ease-in-out 0.2s;
+        -moz-transition: ease-in-out 0.2s;
+        transition: ease-in-out 0.2s;
+        color: map.get($theme-colors, "GRAY_TEXT");
+        font-weight: 100;
+        z-index: 0;
+    }
+    input {
+        height: 40px;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid map.get($theme-colors, "GRAY_LIGHT");
+        border-radius: 5px 5px 0 0;
+        outline: none;
+        font-family: "OpenSans-Light";
+        font-size: 1em;
+        overflow: hidden;
+        background-color: transparent;
+        -webkit-transition: ease-in-out 0.2s;
+        -moz-transition: ease-in-out 0.2s;
+        transition: ease-in-out 0.2s;
+        margin-top: 1em;
+        padding-left: 5px;
+        padding-right: 5px;
+        line-height: normal;
+    }
+}
+
+.custom-input.error {
+    label {
+        color: map.get($theme-colors, "ALERT");
+    }
+    input {
+        color: map.get($theme-colors, "ALERT");
+        border-bottom-color: map.get($theme-colors, "ALERT");
+    }
+    span {
+        font-size: 0.7em;
+        color: map.get($theme-colors, "ALERT");
+    }
+}
+
+.custom-input.active-text,
+.custom-input:hover {
+    label {
+        font-size: 0.8em !important;
+        top: 0px !important;
+        color: map.get($theme-colors, "BLACK_TEXT") !important;
+    }
+    input {
+        background-color: map.get($theme-colors, "WHITE") !important;
+    }
+}
+
+input:-internal-autofill-selected {
+    background-color: white !important;
+}

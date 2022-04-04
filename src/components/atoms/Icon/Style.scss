@@ -1,0 +1,40 @@
+.tintColor {
+    filter: saturate(3);
+}
+
+.icon-container {
+    padding:0 10px;
+    display: flex;
+    align-items: center;
+}
+.xs {
+    height: 10px;
+    width: 10px;
+}
+.s {
+    height: 12px;
+    width: 12px;
+}
+.md {
+    height: 16px;
+    width: 16px;
+}
+.l {
+    height: 18px;
+    width: 18px;
+}
+.xl {
+    height: 20px;
+    width: 20px;
+}
+.xxl {
+    height: 22px;
+    width: 22px;
+}
+.xxxl {
+    height: 24px;
+    width: 24px;
+}
+.trandform180 {
+    transform: { rotate: '180deg' }
+}

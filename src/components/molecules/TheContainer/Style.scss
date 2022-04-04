@@ -1,0 +1,31 @@
+.container {
+    width: 80vw;
+    width: 1140px;
+    margin: 30px auto;
+    min-height: 70vh;
+    margin-bottom: 5vh;
+    // background-color: WHITE,
+    border-radius: 10px;
+    box-shadow: 0 4px 6px 4px rgb(163 163 164 / 10%);
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 1em !important;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .container {
+        width: 100%;
+        padding: 1em 1em;
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .container {
+        width: 100%;
+        padding: 1em 1em;
+    }
+}

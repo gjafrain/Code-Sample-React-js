@@ -1,0 +1,101 @@
+@use "sass:map";
+@import "../../styles/colors.scss";
+
+.pageWrapper {
+    background: map.get($theme-colors, "WHITE");
+    display: flex;
+    border-radius: 10px;
+}
+
+.categories-section-sticky {
+    width: 20%;
+    .categories-section {
+        width: 100%;
+        border-right: 1px solid #ebebeb;
+        padding: 10px;
+        overflow: auto;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.categories-section::-webkit-scrollbar {
+    display: none;
+}
+
+.products-section {
+    min-height: 60vh;
+    padding: 10px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    padding-left: 1.5em;
+    // justify-content: center;
+    // align-items: center;
+    // grid-gap: 24px;
+    .ui.placeholder + .ui.placeholder {
+        margin-top: 0;
+    }
+}
+
+.category-title {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid map.get($theme-colors, "GRAY_LIGHT");
+    font-size: 1.4rem;
+    // border-left: 4px solid map.get($theme-colors, "WHITE");
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+        white-space: nowrap;
+        padding: 0 1em;
+    }
+}
+
+.category-title:hover span {
+    padding-left: 3px;
+    transition: 0.3s all;
+}
+
+.category-title.active {
+    border-left: 4px solid map.get($theme-colors, "PRIMARY");
+    padding-left: 5px;
+    background-color: map.get($theme-colors, "GRAY_LIGHT") !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .categoryPageWrapper {
+        padding: 0 0 1em !important;
+        margin: 0 0 1em !important;
+        .pageWrapper {
+            display: block;
+        }
+        .categories-section-sticky {
+            width: 100%;
+            position: sticky;
+            top: 50px;
+            z-index: 999;
+            background-color: map.get($theme-colors, "WHITE");
+            .categories-section {
+                display: flex;
+                .category-title {
+                    span {
+                        white-space: nowrap;
+                        padding: 0 1em;
+                    }
+                }
+            }
+        }
+        .products-section {
+            width: 100%;
+            min-height: 80vh;
+            padding: 0;
+            justify-content: space-evenly;
+        }
+    }
+}

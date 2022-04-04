@@ -1,0 +1,14 @@
+.appLoadingContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .imageWrapper {
+        height: 200px;
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+}

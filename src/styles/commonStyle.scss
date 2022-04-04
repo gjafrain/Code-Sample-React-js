@@ -1,0 +1,122 @@
+@use "sass:map";
+@import "./colors.scss";
+
+.fRow {
+    flex-direction: row;
+}
+.dFlex {
+    display: flex;
+}
+.fColumn {
+    flex-direction: column;
+}
+.spaceBetween {
+    justify-content: space-between;
+}
+.contentCenter {
+    justify-content: center;
+}
+.alignCenter {
+    align-items: center;
+}
+.flex1 {
+    flex: 1;
+}
+.textCaplital {
+    text-transform: uppercase;
+}
+.flexWrap {
+    flex-wrap: wrap;
+}
+.pointer {
+    cursor: pointer;
+}
+
+.smallFont {
+    font-size: 1em;
+    line-height: 1em;
+    // letter-spacing: 1px;
+}
+
+.regularFont {
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+
+.slide-button-secondary,
+.slide-button-primary,
+.slide-button-primary-down,
+.slide-button-secondary-down,
+.slide-button-primary-down-time-slot,
+.slide-button-alert-down,
+.slide-button-gray-medium-down,
+.slide-button-gray-light,
+.slide-button-gray-light-circule {
+    // transition: 0.3s all;
+    box-shadow: inset 0 0 0 0 map.get($theme-colors, "SECONDARY");
+    -webkit-transition: ease-in-out 0.2s;
+    -moz-transition: ease-in-out 0.2s;
+    transition: ease-in-out 0.2s;
+}
+.slide-button-gray-light-circule,
+.slide-button-gray-light {
+    box-shadow: inset 0 0 0 0 #ebebeb;
+}
+.slide-button-primary,
+.slide-button-primary-down,
+.slide-button-primary-down-time-slot {
+    box-shadow: inset 0 0 0 0 map.get($theme-colors, "PRIMARY");
+}
+
+.slide-button-secondary-down:hover {
+    box-shadow: inset 0px 50px 0 0 map.get($theme-colors, "SECONDARY") !important;
+    color: map.get($theme-colors, "WHITE") !important;
+}
+
+.slide-button-alert-down {
+    box-shadow: inset 0 0 0 0 map.get($theme-colors, "ALERT");
+}
+.slide-button-gray-medium-down {
+    box-shadow: inset 0 0 0 0 map.get($theme-colors, "GRAY_MEDIUM");
+}
+.slide-button-secondary:hover {
+    box-shadow: inset 30em 0 0 0 map.get($theme-colors, "SECONDARY") !important;
+    color: map.get($theme-colors, "WHITE") !important;
+}
+
+.slide-button-primary:hover {
+    box-shadow: inset 30em 0 0 0 map.get($theme-colors, "PRIMARY") !important;
+    color: map.get($theme-colors, "WHITE") !important;
+}
+
+.slide-button-primary-down:hover,
+.slide-button-primary-down.loader {
+    box-shadow: inset 0px 50px 0 0 map.get($theme-colors, "PRIMARY") !important;
+    color: map.get($theme-colors, "WHITE") !important;
+}
+
+.slide-button-primary-down-time-slot:hover {
+    box-shadow: inset 0 110px 0 0 map.get($theme-colors, "PRIMARY") !important;
+    color: map.get($theme-colors, "WHITE") !important;
+}
+
+.slide-button-gray-medium-down:hover {
+    box-shadow: inset 0px 50px 0 0 map.get($theme-colors, "GRAY_MEDIUM") !important;
+    color: map.get($theme-colors, "WHITE") !important;
+}
+
+.slide-button-gray-light-circule:hover,
+.slide-button-gray-light-circule.loader {
+    box-shadow: inset 0 0 0 400px #ebebeb6b !important;
+    // box-shadow: inset 0 0 0 0 #ebebeb;
+    
+}
+
+.slide-button-alert-down:hover {
+    box-shadow: inset 0 50px 0 0 map.get($theme-colors, "ALERT") !important;
+    color: map.get($theme-colors, "WHITE") !important;
+}
+
+.slide-button-gray-light:hover {
+    box-shadow: inset 220px 0 0 0 map.get($theme-colors, "GRAY_LIGHT") !important;
+}

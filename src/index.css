@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: local('OpenSans-Bold'), url(./assets/fonts/OpenSans-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-BoldItalic';
+  src: local('OpenSans-BoldItalic'), url(./assets/fonts/OpenSans-BoldItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-Italic';
+  src: local('OpenSans-Italic'), url(./assets/fonts/OpenSans-Italic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: local('OpenSans-Light'), url(./assets/fonts/OpenSans-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-LightItalic';
+  src: local('OpenSans-LightItalic'), url(./assets/fonts/OpenSans-LightItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: local('OpenSans-Regular'), url(./assets/fonts/OpenSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-SemiBold';
+  src: local('OpenSans-SemiBold'), url(./assets/fonts/OpenSans-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-SemiBoldItalic';
+  src: local('OpenSans-SemiBoldItalic'), url(./assets/fonts/OpenSans-SemiBoldItalic.ttf) format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'OpenSans-Regular';
+  font-size: 62.5% !important;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem !important;
+  /* pointer-events: none; */
+  /* background: #ebebeb !important; */
+}
+
+.pac-container {
+  z-index: 999999;
+  filter: blur(0) grayscale(0) !important;
+}
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .example {
+      background: green;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .example {
+      background: blue;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .example {
+      background: orange;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .example {
+      background: pink;
+  }
+}

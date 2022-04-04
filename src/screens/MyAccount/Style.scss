@@ -1,0 +1,250 @@
+@use "sass:map";
+@import "../../styles/colors.scss";
+
+.my-account {
+    .pageWrapper {
+        display: flex;
+    }
+    .side-menu-section {
+        width: 20%;
+        border-right: 1px solid #ebebeb;
+        padding: 10px;
+        overflow: auto;
+    }
+
+    .main-section {
+        min-height: 70vh;
+        padding: 20px;
+        overflow: auto;
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        justify-content: center;
+        // grid-gap: 24px;
+        .section-container {
+            border: 1px solid #ebebeb;
+            width: 100%;
+            border-radius: 10px;
+            .order-list-container {
+                padding: 20px;
+                .order {
+                    border: 1px solid #ebebeb;
+                    width: 100%;
+                    border-radius: 10px;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 1em;
+                    .title-wrapper {
+                        .action-wrapper {
+                            display: none;
+                        }
+                    }
+                    .date {
+                        font-size: 0.8em;
+                        font-family: "OpenSans-Light";
+                        color: map.get($theme-colors, "GRAY_TEXT");
+                    }
+                    .status-wrapper {
+                        font-size: 1em;
+                        letter-spacing: 0.02em;
+                        color: map.get($theme-colors, "THIRD");
+                    }
+                    .order-info-wrapper {
+                        display: flex;
+                        // justify-content: center;
+                        align-items: center;
+                    }
+                    .amount-wrapper {
+                        padding: 0 1em;
+                        margin: 0 1em;
+                        border-right: 1px solid #ebebeb;
+                        border-left: 1px solid #ebebeb;
+                        color: darkgray;
+                        font-family: "OpenSans-Light";
+                        color: map.get($theme-colors, "BLACK_TEXT");
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .label {
+                            height: unset;
+                            border-bottom: none;
+                        }
+                    }
+                    .payment-type-wrapper {
+                        font-family: "OpenSans-Light";
+                        color: map.get($theme-colors, "BLACK_TEXT");
+                        .payment-status {
+                            font-size: 0.9em;
+                        }
+                    }
+                    .action-wrapper {
+                        display: flex;
+                        .icon {
+                            cursor: pointer;
+                            color: map.get($theme-colors, "GRAY_DARK");
+                            transform: scale(0.8);
+                            transition: 0.2s all;
+                            font-size: 1.5em;
+                        }
+                        .edit {
+                            margin-left: 1em;
+                        }
+
+                        .icon:hover {
+                            color: map.get($theme-colors, "BLACK_TEXT");
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+
+            .address-list-container {
+                padding: 20px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .profile-container {
+                padding: 20px;
+            }
+            .name-wrapper,
+            .email-wrapper,
+            .phone-wrapper {
+                display: flex;
+                justify-content: space-between;
+                margin: 1em 0;
+                .label {
+                    height: unset;
+                    font-size: 1.5em;
+                    border: none;
+                }
+                .edit-btn {
+                    color: map.get($theme-colors, "ALERT");
+                    cursor: pointer;
+                }
+            }
+            .email-wrapper,
+            .phone-wrapper {
+                justify-content: flex-start;
+                .label {
+                    font-size: 1em;
+                }
+                .value {
+                    padding-left: 0.5em;
+                    font-family: "OpenSans-Light";
+                }
+            }
+            .edit-phone-wrapper {
+                .label {
+                    height: unset;
+                    font-size: 0.9em;
+                    border: none;
+                    color: map.get($theme-colors, "GRAY_DARK");
+                }
+                .change-phone-btn {
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: fit-content;
+                    border: 1px solid map.get($theme-colors, "PRIMARY");
+                    color: map.get($theme-colors, "PRIMARY");
+                    border-radius: 5px;
+                    padding: 0 2em;
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+
+    .label {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid map.get($theme-colors, "GRAY_LIGHT");
+        font-size: 1.4rem;
+        // border-left: 4px solid map.get($theme-colors, "WHITE");
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .label:hover {
+        padding-left: 3px;
+        transition: 0.3s all;
+    }
+
+    .label.active {
+        border-left: 4px solid map.get($theme-colors, "PRIMARY");
+        padding-left: 5px;
+        background-color: map.get($theme-colors, "GRAY_LIGHT") !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .my-account {
+        .side-menu-section {
+            display: none;
+        }
+        .main-section {
+            width: 100%;
+            padding: 0;
+            .section-container {
+                border: none;
+                .order-list-container {
+                    padding: 0;
+                    .order {
+                        display: block;
+                        box-shadow: 0px 0px 16px 2px #f5f5f5;
+                        .title-wrapper {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            .action-wrapper {
+                                display: block;
+                                i {
+                                    color: map.get($theme-colors, "GRAY_DARK");
+                                }
+                            }
+                        }
+                        .order-info-wrapper {
+                            justify-content: space-evenly;
+                            margin-top: 0.5em;
+                            .payment-type-wrapper {
+                                text-align: center;
+                                .type {
+                                    text-transform: capitalize;
+                                }
+                                .payment-status {
+                                    margin-top: 0.5em;
+                                    font-size: 1em;
+                                }
+                            }
+                        }
+                        .action-wrapper {
+                            display: none;
+                        }
+                    }
+                }
+                .address-list-container {
+                    padding: 0;
+                    .address-wrapper {
+                        box-shadow: 0px 0px 16px 2px #f5f5f5;
+                        width: 100%;
+                        margin: 0.8em 0;
+                    }
+                }
+                .profile-container {
+                    .name-wrapper,
+                    .email-wrapper,
+                    .phone-wrapper {
+                        margin: 0.8em 0;
+                    }
+                }
+            }
+        }
+    }
+}

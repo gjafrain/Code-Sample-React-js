@@ -1,0 +1,69 @@
+@use "sass:map";
+@import "../../../styles/colors.scss";
+
+.cart-item-wrapper {
+    padding-bottom: .5em;
+    .cart-price-status {
+        font-size: 0.8em;
+        font-family: 'OpenSans-LightItalic';
+        .eql {
+            display: none;
+        }
+        .incr {
+            color: map.get($theme-colors, "ALERT");
+        }
+        .decr {
+            color: map.get($theme-colors, "PRIMARY");
+        }
+    }
+    .cart-item {
+        display: flex;
+        align-items: center;
+        height: 80px;
+        .cart-image-wrapper {
+            width: 30%;
+            height: inherit;
+            margin-right: 5%;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .title-wrapper {
+            display: flex;
+            justify-content: space-between;
+            padding-right: 1em;
+            .title {
+                font-size: 0.9em;
+                padding-bottom: 0.5em;
+                font-size: 0.9em;
+            }
+            .newPrice {
+                font-size: 0.9em;
+            }
+        }
+        .item-detail-wrapper {
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .item-controller {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .priceBox {
+                    padding-left: 0px;
+                    .newPrice {
+                        font-size: 0.9em;
+                    }
+                }
+                .qty {
+                    padding-left: 0px;
+                    font-size: 0.8em;
+                    font-family: "OpenSans-Light";
+                    color: rgb(138, 138, 138);
+                }
+            }
+        }
+    }
+}

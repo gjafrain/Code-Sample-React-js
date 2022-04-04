@@ -1,0 +1,130 @@
+@use "sass:map";
+@import "../../../../../styles/colors.scss";
+
+.contactUs-container {
+    width: 380px;
+    font-size: 16px;
+    position: relative;
+    padding: 2em;
+    .close-icon {
+        position: absolute;
+        right: -9px;
+        background: #ffffff;
+        border-radius: 50px;
+        top: -10px;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: map.get($theme-colors, "GRAY_DARK");
+        cursor: pointer;
+        transition: all 0.2s linear;
+    }
+    .close-icon:hover i {
+        color: map.get($theme-colors, "BLACK_TEXT");
+        transform: scale(1.04);
+    }
+    .header-wrapper {
+        justify-content: center;
+        margin: 1em auto 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .logo-container {
+            height: 50px;
+            width: auto;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+
+        .sub-heading {
+            letter-spacing: 0.03em;
+        }
+    }
+    .form-wrapper {
+        padding: 1em 0;
+        overflow: hidden;
+        .contact-option {
+            display: flex;
+            justify-content: space-between;
+        }
+        .rating-wrapper {
+            text-align: center;
+            margin: 0 0 1em;
+            i {
+                font-size: 2em;
+            }
+        }
+        .input-wrapper {
+            padding: 0.5em 0;
+            input,
+            textArea {
+                height: 40px;
+                width: 100%;
+                border: 1px solid lightgray;
+                border-radius: 5px;
+                padding: 0.5em;
+                font-family: "OpenSans-Light";
+                font-size: 0.9em;
+            }
+            textArea {
+                min-height: 80px;
+            }
+        }
+
+        .error {
+            input,
+            textarea {
+                background-color: #fff6f6 !important;
+                border-color: #e0b4b4 !important;
+                color: #9f3a38 !important;
+            }
+        }
+        .error-msg {
+            color: #9f3a38 !important;
+        }
+        .send-btn {
+            height: 45px;
+            border: 1px solid map.get($theme-colors, "PRIMARY");
+            color: map.get($theme-colors, "PRIMARY");
+            width: fit-content;
+            padding: 0 3em;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: "OpenSans-Light";
+            margin: 1em auto;
+        }
+    }
+
+    .options {
+        // padding: 2em;
+        margin: 1em 0;
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1.5em;
+            cursor: pointer;
+            transition: all 0.2s linear;
+            border-radius: 5px;
+            .icon {
+                color: map.get($theme-colors, "GRAY_DARK");
+            }
+            .wrapper {
+                margin-left: 1em;
+                .text {
+                    font-size: 0.9em;
+                    font-family: "OpenSans-Light";
+                    margin-top: 0.9em;
+                    color: map.get($theme-colors, "GRAY_TEXT");
+                }
+            }
+        }
+        .option:hover {
+            background-color: rgba(240, 243, 249, 0.9);
+            transform: scale(1.02);
+        }
+    }
+}

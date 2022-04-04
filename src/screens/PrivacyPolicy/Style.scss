@@ -1,0 +1,32 @@
+@use "sass:map";
+@import "../../styles/colors.scss";
+
+.privacy-container {
+    padding: 3em 5em;
+    .title {
+        font-size: 2em;
+        text-align: center;
+    }
+    .botton-line {
+        height: 2px;
+        width: 100px;
+        border-radius: 10px;
+        background-color: map.get($theme-colors, "PRIMARY");
+        margin: 0.4em auto 2em;
+    }
+    .updated-date {
+        color: map.get($theme-colors, "SECONDARY");
+    }
+
+    .site-name {
+        color: map.get($theme-colors, "PRIMARY");
+        font-family:"OpenSans-Regular";
+
+    }
+    .text {
+        font-family: "OpenSans-Light";
+        letter-spacing: 0.04em;
+        line-height: 2em;
+        // font-size: .9em;
+    }
+}

@@ -1,0 +1,233 @@
+@use "sass:map";
+@import "../../../../../styles/colors.scss";
+
+.add-edit-address-wrapper {
+    font-family: "OpenSans-Regular";
+    font-size: 1.6rem;
+    width: 520px;
+    // padding: 10px;
+    .modal-header {
+        text-align: center;
+        margin: 0.8em 0 1.5em;
+        .title {
+            font-family: "OpenSans-Regular";
+            font-size: 1.3em;
+            letter-spacing: 0.02em;
+            color: map.get($theme-colors, "BLACK_TEXT");
+        }
+        .sub-heading {
+            font-family: "OpenSans-Light";
+            font-size: 0.8em;
+            color: map.get($theme-colors, "GRAY_TEXT");
+            margin-top: 0.5em;
+        }
+    }
+    .modal-container {
+        margin: 0.8em 0;
+        padding: 0 2em;
+        .input-wrap {
+            display: flex;
+            justify-content: space-between;
+            .textbox-wrapper {
+                width: 45%;
+            }
+
+            .house-number,
+            .zipcode {
+                width: 35%;
+            }
+            .landmark,
+            .phone {
+                width: 55%;
+            }
+        }
+        .address-option-wrapper {
+            display: flex;
+            margin: 1.5em 0;
+            margin-left: 1em;
+            justify-content: center;
+            .address-option {
+                background: map.get($theme-colors, "GRAY_LIGHT");
+                border-radius: 10px;
+                padding: 0.3em;
+                font-size: 0.9em;
+                font-family: "OpenSans-Light";
+                display: flex;
+                align-items: center;
+                margin-right: 1.5em;
+                padding-right: 0.5em;
+            }
+            .slide-button-primary {
+                box-shadow: inset 0 0 0 0 map.get($theme-colors, "SECONDARY") !important;
+            }
+            .slide-button-primary:hover {
+                box-shadow: inset 90px 0 0 0 map.get($theme-colors, "SECONDARY") !important;
+            }
+
+            .address-option.active {
+                background: map.get($theme-colors, "SECONDARY");
+                color: map.get($theme-colors, "WHITE");
+                .icon-container {
+                    filter: brightness(0) invert(1) !important;
+                }
+            }
+        }
+
+        .googleautocomplete {
+            margin: 1em 0;
+            padding: 1.5em 0;
+            border-bottom: 1px solid #e6e6e6;
+            label {
+                position: unset;
+                font-family: "OpenSans-Light";
+                font-size: 0.9em;
+                color: #565656;
+            }
+            input {
+                border: 1px solid #e6e6e6;
+                border-radius: 5px;
+                margin-top: 0.5em;
+                font-size: 0.9em;
+                height: 40px;
+                width: 100%;
+                outline: none;
+                font-family: "OpenSans-Light";
+                overflow: hidden;
+                background-color: transparent;
+                transition: ease-in-out 0.2s;
+                padding-left: 5px;
+                padding-right: 5px;
+                line-height: normal;
+            }
+            .error {
+                font-size: 0.8em;
+                color: map.get($theme-colors, "ALERT");
+            }
+        }
+    }
+
+    .map-view {
+        position: relative;
+        height: 60vh;
+        padding: 0;
+        .googleautocomplete {
+            margin: 0 auto;
+            padding: 0;
+            border: 0;
+            position: absolute;
+            width: 100%;
+            align-items: center;
+            top: 1%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 999;
+            label {
+                display: none;
+            }
+            input {
+                width: 70%;
+                background-color: white;
+                height: 50px;
+                padding: 0 0px 0 10px;
+                box-shadow: 0px 0px 13px 9px #e5e5e582;
+            }
+            .error {
+                margin-top: 1em;
+            }
+        }
+
+        .map-wrapper {
+            width: 100%;
+            height: inherit;
+            .map-init {
+                width: 100%;
+                height: inherit;
+            }
+
+            .error-msg {
+                font-size: 0.8em;
+                position: absolute;
+                z-index: 9;
+                background: map.get($theme-colors, "ALERT");
+                padding: 1.2em 0.5em;
+                color: white;
+                border-radius: 10px;
+                bottom: -03em;
+                left: 10%;
+                transition: 0.3s ease-in-out;
+                opacity: 0;
+            }
+            .show {
+                bottom: 0px;
+                opacity: 1;
+            }
+        }
+    }
+
+    .map-hint {
+        font-size: 0.9em;
+        text-align: center;
+        margin: 2em 0;
+        font-family: "OpenSans-Light";
+    }
+
+    .modal-footer {
+        border-top: 1px solid map.get($theme-colors, "GRAY_LIGHT");
+        padding-top: 1em;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 0.8em 0;
+
+        .submit-btn {
+            color: map.get($theme-colors, "BLACK_TEXT");
+            height: 45px;
+            border: 1px solid map.get($theme-colors, "GRAY_LIGHT");
+            padding: 0 2em;
+            border-radius: 5px;
+        }
+        .cancel-btn {
+            border-radius: 5px;
+            color: map.get($theme-colors, "GRAY_MEDIUM");
+            height: 45px;
+            border: 1px solid map.get($theme-colors, "GRAY_LIGHT");
+            padding: 0 2em;
+        }
+    }
+}
+@media only screen and (max-width: 800px) {
+    .add-edit-address-wrapper {
+        width: 90vw;
+        padding: 1em;
+        .modal-container {
+            padding: 0 1em;
+            .input-wrap {
+                display: block;
+                .house-number,
+                .landmark,
+                .zipcode,
+                .phone {
+                    width: 100%;
+                }
+            }
+            .address-option-wrapper {
+                margin: 1.5em 0;
+            }
+        }
+
+        .map-view {
+            padding: 0 0;
+            .googleautocomplete {
+                input {
+                    width: 100%;
+                }
+            }
+            .map-wrapper {
+                .error-msg {
+                    left: 0%;
+                }
+            }
+        }
+    }
+}

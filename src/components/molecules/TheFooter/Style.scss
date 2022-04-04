@@ -1,0 +1,78 @@
+@use "sass:map";
+@import "../../../styles/colors.scss";
+
+.footer-container {
+    min-height: 30vh;
+    // height: 260px;
+    margin-top: 1em;
+    background-color: map.get($theme-colors, "SECONDARY");
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 1em 0;
+    .container {
+        min-height: auto;
+        height: inherit;
+        box-shadow: none;
+        padding: 1em;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-wrapper {
+        display: flex;
+    }
+
+    .right-widget {
+        width: 220px;
+        // margin-right: 2em;
+        .logo-container {
+            height: 160px;
+            display: flex;
+            justify-content: center;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+        .detail {
+            color: map.get($theme-colors, "WHITE");
+            font-size: 1em;
+            text-align: justify;
+        }
+    }
+
+    .middle-widget {
+        .title {
+            text-transform: uppercase;
+            padding: 1em 0;
+        }
+        .footer-nav {
+            font-family: OpenSans-Light;
+            cursor: pointer;
+            padding: 0.3em 0.2em;
+            margin: 0.3em 0;
+            display: flex;
+            align-items: center;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            color: map.get($theme-colors, "WHITE");
+        }
+        .footer-nav:hover {
+            color: map.get($theme-colors, "BLACK_TEXT");
+        }
+        .text {
+            font-family: OpenSans-Light;
+            padding: 0.2em 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-container {
+        .right-widget {
+            display: none;
+        }
+    }
+}

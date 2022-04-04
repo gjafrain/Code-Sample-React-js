@@ -1,0 +1,20 @@
+$theme-colors: (
+    "PRIMARY": #3a6b35,
+    "SECONDARY": #f6ba44,
+    "THIRD": #b9925e,
+    "WHITE": #ffffff,
+    "BLACK": #000000,
+    "BLACK_LIGHT": #424242,
+    "SUCCESS": #3adb76,
+    "WARNING": #ffae00,
+    "ALERT": #cc4b37,
+    "GRAY_LIGHT": #e6e6e6,
+    "GRAY_MEDIUM": #cacaca,
+    "GRAY_DARK": #8a8a8a,
+    "GRAY_TEXT": #565656,
+    "BLACK_TEXT": #424242,
+);
+
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}

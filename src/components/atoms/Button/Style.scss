@@ -1,0 +1,14 @@
+.custom-buttom {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+.custom-buttom:hover {
+    .tintColor {
+        transition: ease-in-out 0.3s;
+        filter: brightness(0) invert(1) !important;
+    }
+}
+.custom-buttom.loader {
+    justify-content: center !important;
+}

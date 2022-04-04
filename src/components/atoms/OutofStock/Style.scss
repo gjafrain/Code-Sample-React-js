@@ -1,0 +1,16 @@
+@use "sass:map";
+@import "../../../styles/colors.scss";
+
+.out-stock-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 5px;
+    border: 1px solid map.get($theme-colors,'GRAY_MEDIUM');
+    border-radius: 50px;
+    height: 35px;
+    cursor: not-allowed;
+    font-size: 0.8em;
+    padding: 0 10px;
+    color: map.get($theme-colors,'GRAY_MEDIUM');
+}

@@ -1,0 +1,88 @@
+@use "sass:map";
+@import "../../styles/colors.scss";
+
+.thanks-order-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .logo-container {
+        height: 180px;
+        width: 220px;
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+    .title {
+        font-size: 2em;
+        font-family: "OpenSans-Light";
+        margin-bottom: 0.1em;
+        letter-spacing: 0.06em;
+    }
+    .sub-title {
+        font-size: 1.2em;
+        font-family: "OpenSans-Light";
+        margin-bottom: 0.5em;
+    }
+    .discreption {
+        display: flex !important;
+        align-items: center;
+        padding: 0 !important;
+        font-size: 1em !important;
+        line-height: unset !important;
+        height: unset !important;
+        .text {
+            font-size: 1em;
+            font-family: "OpenSans-Light";
+        }
+        .ordre-id-wrapper {
+            background: #f9f8f8;
+            padding: 0.2em 0.5em;
+            border-radius: 2em;
+            font-size: 1em;
+            font-family: "OpenSans-Light";
+            margin-left: 0.3em;
+        }
+    }
+    .footer {
+        margin: 2em 0;
+        border-top: 1px solid map.get($theme-colors, "PRIMARY");
+        padding-top: 2em;
+        display: flex;
+        align-items: center;
+        .track-order-btn {
+            padding: 0 2em;
+            color: map.get($theme-colors, "PRIMARY");
+            border: 1px solid map.get($theme-colors, "PRIMARY");
+            border-radius: 5px;
+            height: 45px;
+            margin-right: 1em;
+        }
+
+        .cont-browsing-btn {
+            padding: 0 2em;
+            color: map.get($theme-colors, "SECONDARY");
+            border: 1px solid map.get($theme-colors, "SECONDARY");
+            border-radius: 5px;
+            height: 45px;
+            margin-left: 1em;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .thanks-order-wrapper {
+        .footer .cont-browsing-btn {
+            padding: 0 1em;
+        }
+        .discreption {
+            display: block !important;
+            text-align: center;
+            line-height: 2em !important;
+            .ordre-id-wrapper {
+                display: inline;
+            }
+        }
+    }
+}

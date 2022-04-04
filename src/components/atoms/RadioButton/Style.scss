@@ -1,0 +1,40 @@
+@use "sass:map";
+@import "../../../styles/colors.scss";
+
+.radio-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    cursor: pointer;
+    .outer {
+        border: 2px solid map.get($theme-colors, "PRIMARY");
+        height: 20px;
+        width: 20px;
+        border-radius: 50px;
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1em;
+        .inner {
+            height: 10px;
+            width: 10px;
+            border-radius: 50px;
+        }
+    }
+    .true {
+        .inner {
+            background-color: map.get($theme-colors, "PRIMARY");
+        }
+    }
+    .false {
+        border-color: map.get($theme-colors, "GRAY_MEDIUM");
+        .inner {
+            background-color: map.get($theme-colors, "GRAY_LIGHT");
+        }
+    }
+    .label {
+        font-family: "OpenSans-Light";
+        font-size: 1em;
+    }
+}
